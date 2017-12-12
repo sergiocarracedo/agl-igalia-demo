@@ -5,6 +5,7 @@ import MultimediaPage from '@/components/pages/Multimedia'
 import NavigationPage from '@/components/pages/Navigation'
 import HVACPage from '@/components/pages/HVAC'
 import ConnectivityPage from '@/components/pages/Connectivity'
+import ClimatizationPage from '@/components/pages/Climatization'
 import AppsPage from '@/components/pages/Apps'
 
 Vue.use(Router)
@@ -41,6 +42,11 @@ export default new Router({
       path: '/connectivity',
       name: 'Connectivity',
       component: ConnectivityPage
+    },
+    {
+      path: '/climatization',
+      name: 'Climatization',
+      component: ClimatizationPage
     }
   ]
 })

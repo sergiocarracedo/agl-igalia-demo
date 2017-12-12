@@ -8,6 +8,7 @@
           <router-view/>
         </transition>
       </div>
+      <bottom-bar></bottom-bar>
     </v-app>
   </div>
 </template>
@@ -15,11 +16,13 @@
 <script>
   import StatusBar from '@/components/StatusBar'
   import ToolBar from '@/components/ToolBar'
+  import BottomBar from '@/components/BottomBar'
 
   export default {
     components: {
       'status-bar': StatusBar,
-      'tool-bar': ToolBar
+      'tool-bar': ToolBar,
+      'bottom-bar': BottomBar
     },
     name: 'app'
   }
@@ -39,14 +42,18 @@
     background-size: cover;
     background-position: center center;
     .toolbar {
-      top: 00px;
+      top: 0;
+    }
+
+    .bottombar {
+
     }
     .router-container {
       position: absolute;
       top: 105px;
       left: 0;
       right: 0;
-      bottom: 0;
+      bottom: 80px;
       overflow: auto;
     }
   }

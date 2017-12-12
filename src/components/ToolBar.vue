@@ -39,6 +39,11 @@
             fonticon: 'icon-compass',
             route: 'Navigation'
           },
+          // {
+          //   title: 'Clima',
+          //   fonticon: 'icon-equalizer',
+          //   route: 'Climatization'
+          // },
           {
             title: 'HVAC',
             fonticon: 'icon-speedometer',
