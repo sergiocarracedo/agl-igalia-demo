@@ -8,27 +8,51 @@
         <v-icon>flaticon-seatbelt</v-icon>
         <v-icon>flaticon-low-beam</v-icon>
 
-        <span class="preasure fl">
-          1.8psi
-          <v-icon>flaticon-warning</v-icon>
-        </span>
 
-        <span class="preasure fr">
-          2.3psi
-        </span>
+        <pressure-sensor class="preasure fl" :pressure="pressure.frontLeft" @click.native="togglePressure('frontLeft')"></pressure-sensor>
+        <pressure-sensor class="preasure fr" :pressure="pressure.frontRight" @click.native="togglePressure('frontRight')"></pressure-sensor>
+        <pressure-sensor class="preasure rl" :pressure="pressure.rearLeft" @click.native="togglePressure('rearLeft')"></pressure-sensor>
+        <pressure-sensor class="preasure rr" :pressure="pressure.rearRight" @click.native="togglePressure('rearRight')"></pressure-sensor>
 
-        <span class="preasure rl">
-          2.5psi
-        </span>
-        <span class="preasure rr">
-          2.5psi
-        </span>
+        <child-lock class="child-lock" :locked="childlock" @click.native="toggleChildlock()"></child-lock>
+
       </div>
     </div>
   </div>
 </template>
 <script>
+  import PressureSensor from './PressureSensor'
+  import ChildLock from './ChildLock'
+  import Battery from './Battery'
   export default {
+    components: {
+      Battery,
+      ChildLock,
+      'pressure-sensor': PressureSensor
+    },
+    data () {
+      return {
+        pressure: {
+          frontLeft: 2.2,
+          frontRight: 2.2,
+          rearLeft: 2.4,
+          rearRight: 2.4
+        },
+        childlock: false
+      }
+    },
+    methods: {
+      togglePressure (wheel) {
+        if (this.pressure[wheel] < 2) {
+          this.pressure[wheel] = 2.3
+        } else {
+          this.pressure[wheel] = Math.random() * 1 + 1
+        }
+      },
+      toggleChildlock () {
+        this.childlock = !this.childlock
+      }
+    }
   }
 </script>
 
@@ -49,6 +73,13 @@
       max-width: 100%;
     }
 
+    .preasure,
+    .child-lock {
+      cursor: pointer;
+    }
+
+
+    .child-lock,
     .preasure,
     .flaticon {
       position: absolute;
@@ -81,9 +112,10 @@
       top: 10px;
     }
 
-    .flaticon-warning {
-     color: @orange;
+    .child-lock {
+      top: 400px;
     }
+
 
     .preasure {
       &:after {

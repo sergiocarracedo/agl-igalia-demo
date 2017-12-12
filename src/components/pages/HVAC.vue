@@ -1,11 +1,9 @@
 <template>
   <div class="component">
-    <div class="speedometer">
-      {{ speed }}<span>km/h</span>
-    </div>
-    <div class="odometer">
-      {{ odo }}<span>km</span>
-    </div>
+    <odometer :speed="speed" :odo="odo" :gear="gear"></odometer>
+
+    <battery :battery="{ percent: 80, energy: 31}"></battery>
+
     <car>
 
     </car>
@@ -14,14 +12,25 @@
 
 <script>
   import Car from '@/components/Car'
+  import Battery from '../Battery'
+  import Odometer from '../Odometer'
   export default {
     components: {
+      Odometer,
+      Battery,
       Car
     },
     data () {
       return {
         speed: 0,
-        odo: 0
+        odo: 0,
+        gear: 'D',
+        pressure: {
+          frontRight: 2.2,
+          frontLeft: 2.2,
+          readRight: 2.4,
+          rearLeft: 2.4
+        }
       }
     },
     methods: {
@@ -60,7 +69,10 @@
         }
 
         this.odo += (this.speed * 1 / 3600)
-        this.odo = Math.floor(this.odo)
+        this.odo = this.odo
+      },
+      simPressure() {
+
       }
     },
     mounted () {
@@ -79,24 +91,17 @@
   .component {
     .cover();
   }
-  .speedometer,
-  .odometer {
-    padding: 0 40px;
-    width: 200px;
-    text-align: right;
-    span {
-      padding-left: 3px;
-      font-size: 10px;
-    }
+  .odometer-indicator {
+    position: absolute;
+    left: 20px;
+    top: 20px;
   }
 
-  .speedometer {
-    font-size: 60px;
-    padding-top: 40px;
-  }
 
-  .odometer {
-    font-size: 20px;
+  .battery-indicator {
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 
 </style>
