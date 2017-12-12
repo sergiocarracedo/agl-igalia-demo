@@ -8,8 +8,7 @@
     <v-card
       img="static/doc-images/toolbar/map.jpg"
       flat
-      height="300px"
-      class="pa-3"
+      class="pt-3"
     >
       <v-toolbar
         floating
