@@ -30,14 +30,11 @@
       ChildLock,
       'pressure-sensor': PressureSensor
     },
+    props: [
+      'pressure'
+    ],
     data () {
       return {
-        pressure: {
-          frontLeft: 2.2,
-          frontRight: 2.2,
-          rearLeft: 2.4,
-          rearRight: 2.4
-        },
         childlock: false
       }
     },
@@ -63,7 +60,9 @@
   }
   .car {
     margin: auto;
-    width: 285px;
+    max-width: 285px;
+    width: 40%;
+
     display: block;
     left: 0;
     right: 0;
@@ -90,20 +89,20 @@
 
     .flaticon-airbag {
       color: @orange;
-      right:80px;
-      top: 280px;
+      right:30%;
+      top: 45%;
     }
 
     .flaticon-seatbelt {
       color: @red;
-      left:80px;
-      top: 280px;
+      left:30%;
+      top: 45%;;
     }
 
     .flaticon-fuel {
       color: @orange;
       left:-15px;
-      top: 550px;
+      top: 85%;
     }
 
     .flaticon-low-beam {
@@ -113,7 +112,7 @@
     }
 
     .child-lock {
-      top: 400px;
+      top: 62%;
     }
 
 
@@ -147,12 +146,12 @@
 
       &.fl,
       &.fr {
-        top: 130px;
+        top: 20%;
       }
 
       &.rl,
       &.rr {
-        bottom: 150px;
+        bottom: 22%;
       }
 
     }

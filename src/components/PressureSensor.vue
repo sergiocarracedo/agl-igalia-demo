@@ -1,6 +1,6 @@
 <template>
   <div class="{warning: warning}">
-    {{ pressure.toFixed(1) }}psi <v-icon v-if="warning">flaticon-warning</v-icon>
+    {{ pressureDisplay }}psi <v-icon v-if="warning">flaticon-warning</v-icon>
   </div>
 </template>
 
@@ -10,6 +10,13 @@
       'pressure'
     ],
     computed: {
+      pressureDisplay () {
+        try {
+          return this.pressure.toFixed(1)
+        } catch (e) {
+          return 0
+        }
+      },
       warning () {
         return this.pressure < 2
       }

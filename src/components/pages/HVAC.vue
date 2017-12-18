@@ -4,7 +4,7 @@
 
     <battery :battery="{ percent: 80, energy: 31}"></battery>
 
-    <car>
+    <car :pressure="pressure">
 
     </car>
   </div>
@@ -37,9 +37,10 @@
       simSpeed () {
         let state = 'cruise'
 
-        if ((Math.random(0, 1) * 100) > 95) {
+        let stateRand = Math.random(0, 1) * 100
+        if (stateRand > 95) {
           state = 'brake'
-        } else if ((Math.random(0, 1) * 100) < 40) {
+        } else if (stateRand < 40) {
           state = 'acceleration'
         } else {
           state = 'cruise'
@@ -71,14 +72,26 @@
         this.odo += (this.speed * 1 / 3600)
         this.odo = this.odo
       },
-      simPressure() {
+      simPressure () {
+        let pressureRandom = (Math.random(0, 1) / 2) - 0.25
 
+        for (let i in this.pressure) {
+          this.pressure[i] += pressureRandom
+          if (this.pressure[i] < 0) {
+            this.pressure[i] = 0
+          }
+
+          if (this.pressure[i] > 3) {
+            this.pressure[i] = 3
+          }
+        }
       }
     },
     mounted () {
       this.speed = Math.floor(Math.random(0, 120) * 100)
       this.odo = Math.floor(Math.random(0, 9999999) * 100)
 
+      setInterval(this.simPressure, 1000)
       setInterval(this.simSpeed, 1000)
     }
   }
