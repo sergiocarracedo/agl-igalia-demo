@@ -33,7 +33,7 @@
     overflow: hidden;
   }
   body {
-    max-width: 700px;
+    max-width: 720px;
     height: 100%;
     margin: 0 auto;
   }
