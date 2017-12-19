@@ -17,6 +17,8 @@
     "@audi/audi-icon": "github:audi/audi-icon",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "material-design-icons": "^3.0.1",
+    "roboto-fontface": "^0.8.0",
     "simple-line-icons": "^2.4.1",
     "vue": "^2.5.2",
     "vue-digital-clock": "^1.5.0",

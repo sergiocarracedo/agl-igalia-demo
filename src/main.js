@@ -8,6 +8,9 @@ import 'vuetify/dist/vuetify.min.css'
 import '@audi/audi-icon/dist/css/audi-glyph.min.css'
 import 'simple-line-icons/css/simple-line-icons.css'
 import '@/assets/font/flaticon.css'
+import 'roboto-fontface'
+import 'material-design-icons/iconfont/material-icons.css'
+
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
