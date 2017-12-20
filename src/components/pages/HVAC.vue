@@ -28,7 +28,7 @@
         pressure: {
           frontRight: 2.2,
           frontLeft: 2.2,
-          readRight: 2.4,
+          rearRight: 2.4,
           rearLeft: 2.4
         }
       }
