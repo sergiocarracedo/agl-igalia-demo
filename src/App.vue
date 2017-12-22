@@ -29,6 +29,10 @@
 </script>
 
 <style lang="less">
+  html {
+    text-rendering: auto;
+    -webkit-font-smoothing: none;
+  }
   html, body {
     overflow: hidden;
   }

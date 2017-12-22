@@ -1,10 +1,17 @@
 <template>
   <div class="page">
     <gmap-map
-      :center="{lat:42.4, lng:-8}"
+      :center="center"
       :zoom="8"
       map-type-id="terrain"
-    ></gmap-map>
+    >
+      <gmap-marker
+        :key="index"
+        :position="center"
+      ></gmap-marker>
+
+
+    </gmap-map>
     <v-card
       img="static/doc-images/toolbar/map.jpg"
       flat
@@ -14,12 +21,14 @@
         floating
         dense
       >
-        <v-text-field prepend-icon="search" hide-details single-line></v-text-field>
-        <v-btn icon>
-          <v-icon>my_location</v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>more_vert</v-icon>
+        <v-icon class="pr-3">search</v-icon>
+        <gmap-autocomplete prepend-icon="search"
+          :value="description"
+          @place_changed="setPlace"
+          >
+        </gmap-autocomplete>
+        <v-btn @click="setCurrent()" icon>
+          <v-icon >my_location</v-icon>
         </v-btn>
       </v-toolbar>
     </v-card>
@@ -30,7 +39,30 @@
 
 <script>
   export default {
+    data () {
+      return {
+        center: {lat: 42.2261474, lng: -8.7605312},
+        search: '',
+        marker: {}
+      }
+    },
+    methods: {
+      setCurrent () {
+        this.center = {
+          lat: 42.2261474,
+          lng: -8.7605312
+        }
+      },
+      setPlace (e) {
+        this.center = {
+          lat: e.geometry.location.lat(),
+          lng: e.geometry.location.lng()
+        }
 
+        this.markers[0].position = this.center
+
+      }
+    }
   }
 </script>
 
