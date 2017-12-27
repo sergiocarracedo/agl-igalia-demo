@@ -58,9 +58,7 @@
           lat: e.geometry.location.lat(),
           lng: e.geometry.location.lng()
         }
-
         this.markers[0].position = this.center
-
       }
     }
   }
