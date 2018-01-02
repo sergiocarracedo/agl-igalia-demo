@@ -38,6 +38,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+      'Access-Control-Allow-Credentials': 'true',
       'X-Frame-Options': 'ALLOW-FROM http://www.igalia.com'
     }
   },
