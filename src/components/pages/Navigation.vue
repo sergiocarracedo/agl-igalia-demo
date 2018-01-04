@@ -26,6 +26,7 @@
             <v-icon class="pr-3">search</v-icon>
             <gmap-autocomplete prepend-icon="search"
                                :value="description"
+                               :selectFirstOnEnter="true"
                                @place_changed="setPlace"
             >
             </gmap-autocomplete>
@@ -78,19 +79,21 @@
         }
       },
       setPlace (e) {
-        this.center = {
-          lat: e.geometry.location.lat(),
-          lng: e.geometry.location.lng()
-        }
+        if (e.geometry !== undefined) {
+          this.center = {
+            lat: e.geometry.location.lat(),
+            lng: e.geometry.location.lng()
+          }
 
-        this.getRoute()
+          this.getRoute()
+        } else {
+        }
       },
       getRoute () {
         let origin = '42.2261474,-8.7605312'
 
         axios('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + this.center.lat + ',' + this.center.lng + '&key=' + process.env.MAPS_API_KEY)
           .then((response) => {
-            console.log(response.data.routes[0].legs[0].steps)
             this.steps = response.data.routes[0].legs[0].steps
             this.route = window.google.maps.geometry.encoding.decodePath(response.data.routes[0].overview_polyline.points)
           }).catch((error) => {
