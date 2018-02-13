@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page web">
       <v-toolbar
         dense
       >
@@ -31,6 +31,12 @@
     widTH: 100%;
     heighT: 100%;
   }
+  .web {
+    background: #fff url(/static/web.jpg) no-repeat;
+    background-size: 100% auto;
+    background-position: center 55px;
+  }
+
   .toolbar {
     z-index: 9;
   }

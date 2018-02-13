@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page map">
     <gmap-map
       :center="center"
       :zoom="8"
@@ -119,6 +119,12 @@
     righT: 0;
     bottom: 0;
     top: 0;
+  }
+
+  .map {
+    background: url(/static/maps.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
   }
 
   .steps {
