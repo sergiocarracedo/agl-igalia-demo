@@ -42,7 +42,8 @@
     margin: 0 auto;
   }
   #app {
-    background: url(/static/img/content-background.png) no-repeat;
+    // background: url(/static/img/content-background.png) no-repeat;
+    background: url(/static/carbonfiber.png) no-repeat;
     background-size: cover;
     background-position: center center;
     .toolbar {

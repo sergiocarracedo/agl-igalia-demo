@@ -1,7 +1,7 @@
 <template>
   <div class="toolbar">
     <toolbar-item>
-      <img slot="icon" src="static/logo.png" alt="AGL" />
+      <img slot="icon" src="static/igalia-logo-simple.png" alt="Igalia" />
     </toolbar-item>
 
     <toolbar-item :class="{active: ($route.name == item.route)}" v-for="item in items" :key="item.route" @click.native="goto(item.route)">

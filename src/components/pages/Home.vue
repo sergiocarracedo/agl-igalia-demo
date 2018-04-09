@@ -5,13 +5,13 @@
       <div class="section" style="text-align:center;padding-top: 200px">
         <div class="cube" style="margin:auto;">
           <div class="front">
-            <img class="rotatelogo" src="static/logo.png" />
+            <img class="rotatelogo" src="static/igalia-logo.png" />
           </div>
           <div class="back">
-            <img class="rotatelogo" src="static/logo.png" />
+            <img class="rotatelogo" src="static/igalia-logo.png" />
           </div>
           <div class="top">
-            <img class="rotatelogo" src="static/logo.png" />
+            <img class="rotatelogo" src="static/igalia-logo.png" />
           </div>
           <div class="bottom">
             <img class="rotatelogo" src="static/igalia-logo.png" />
