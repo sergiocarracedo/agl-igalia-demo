@@ -25,9 +25,9 @@
             route: 'Home'
           },
           {
-            title: 'Apps',
-            fonticon: 'icon-grid',
-            route: 'apps'
+            title: 'HVAC',
+            fonticon: 'icon-speedometer',
+            route: 'Hvac'
           },
           {
             title: 'Multimedia',
@@ -39,16 +39,16 @@
             fonticon: 'icon-compass',
             route: 'Navigation'
           },
+          {
+            title: 'Apps',
+            fonticon: 'icon-grid',
+            route: 'apps'
+          },
           // {
           //   title: 'Clima',
           //   fonticon: 'icon-equalizer',
           //   route: 'Climatization'
           // },
-          {
-            title: 'HVAC',
-            fonticon: 'icon-speedometer',
-            route: 'Hvac'
-          },
           {
             title: 'Connectivity',
             fonticon: 'icon-globe',
