@@ -32,7 +32,7 @@
     heighT: 100%;
   }
   .web {
-    background: #fff url(/static/web.jpg) no-repeat;
+    background: #fff url(../../../static/web.jpg) no-repeat;
     background-size: 100% auto;
     background-position: center 55px;
   }

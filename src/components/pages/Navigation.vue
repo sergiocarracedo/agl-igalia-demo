@@ -122,7 +122,7 @@
   }
 
   .map {
-    background: url(/static/maps.jpg) no-repeat;
+    background: url(../../../static/maps.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
   }

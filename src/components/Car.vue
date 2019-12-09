@@ -1,7 +1,7 @@
 <template>
   <div class="component">
     <div class="car">
-      <img src="/static/car.png" class="car-img" />
+      <img src="../../static/car.png" class="car-img" />
       <div class="wrapper">
         <v-icon>flaticon-airbag</v-icon>
         <v-icon>flaticon-fuel</v-icon>
