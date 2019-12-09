@@ -55,7 +55,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/agl-igalia-demo',
+    assetsPublicPath: '/agl-igalia-demo/',
 
     /**
      * Source Maps
